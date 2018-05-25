@@ -1,0 +1,66 @@
+html, body {
+	height: 100%;
+}
+
+.navbar {
+ 	background: #262424;
+}
+.nav-link {
+	margin-right: 1em !important;
+	font-family: 'VT323', monospace;
+}
+.navbar-brand {
+	font-family: 'Audiowide', cursive;
+}
+.nav-link, .navbar-brand {
+	color: #f4f4f4;
+ 	cursor: pointer;
+}
+.nav-link:hover, .navbar-brand:hover {
+	color: #f97300;
+}
+.navbar-collapse {
+	justify-content: flex-end;
+}
+.navbar-toggler {
+	color: #fff;
+}
+.navbar-toggler:hover {
+	color: #f97300 !important;
+}
+
+/*header style*/
+.header {
+	background: url('../img/czipar.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.overlay {
+	position: absolute;
+	min-height: 100%;
+	min-width: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(244, 244, 244, 0.65);
+}
+
+.description{
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+}
+.description h1{
+ color:#F97300 ;
+}
+.description p{
+ color:#666;
+ font-size: 20px;
+ width: 50%;
+ line-height: 1.5;
+}
+.description button{
+ border:1px  solid #262424;
+ background:#262424;
+ color:#fff;
+}

@@ -1,0 +1,76 @@
+html, body {
+	height: 100%;
+	background: url('../img/czipar.jpg') center center no-repeat;
+	background-size: cover;
+}
+
+.logo {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 0);
+	padding-top: 20px;
+}
+
+#logo img {
+	margin: 0 auto !important;
+	padding-top: 20px;
+}
+
+#intro p {
+	color: white;
+	text-align: center;
+	font-family: 'Sunflower', sans-serif;
+	font-size: 1.5em;
+	padding-top: 250px;
+}
+
+#counter .countdown {
+    text-align: center;
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, +50%);
+    font-family: 'Kavivanar', cursive;
+    font-size:1.5em;
+    margin: -35px 0 0;
+}
+
+#icons {
+	padding-top: 50px;
+}
+
+#icons .list-inline-item {
+	color: #FFFFFF;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#twitter:hover {
+    color:#6cadde;
+}
+#facebook:hover {
+    color:#3b5998;
+}
+#messenger:hover {
+	color:#3b5998;
+}
+#instagram:hover {
+    color:#f45f42;
+}
+
+#signup {
+	padding-top: 20px;
+    text-align: center;
+}
+
+#signup .form-inline {
+    display: block;
+}
+
+#signup .btn {
+    background-color: rgba(161,186,226,0.5);
+    color: white;
+}
+#signup .btn:hover {
+    background-color:rgba(37,165,82,1);
+}

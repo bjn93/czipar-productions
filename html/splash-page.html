@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Kavivanar|Sunflower:300" rel="stylesheet">
+  </head>
+  <body>
+    <section id="logo">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <img src="img/my-logo.png" class="logo img-fluid"/>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="intro">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <p>Big things coming, we'll be ready to launch in...</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="counter">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="countdown"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="icons">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <ul class="list-inline">
+              <a href="https://twitter.com/czipar_" target="blank">
+                <li class="list-inline-item">
+                  <i id="twitter" class="fab fa-twitter fa-3x" aria-hidden="true"></i>
+                </li>
+              </a>
+              <a href="https://www.facebook.com/Czipar-1253623971438028/" target="blank">
+                <li class="list-inline-item">
+                  <i id="facebook" class="fab fa-facebook-square fa-3x" aria-hidden="true"></i>
+                </li>
+              </a>
+              <a href="https://www.facebook.com/messages/t/1253623971438028" target="blank">
+                <li class="list-inline-item">
+                  <i id="messenger" class="fab fa-facebook-messenger fa-3x" aria-hidden="true"></i>
+                </li>
+              </a>
+              <a href="https://www.instagram.com/czipar_/?hl=en" target="blank">
+                <li class="list-inline-item">
+                  <i id="instagram" class="fab fa-instagram fa-3x" aria-hidden="true"></i>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="signup">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <form class="form-inline" role="form" method="post" id="reused_form">
+              <input id="email" type="email" class="form-control form-control-sm" name="email" placeholder="enter your email" required>
+              <button type="submit" class="btn btn-signup btn-sm" name="submit" value="send">find out more</button>
+            </form>
+            <div id="success_message" style="width:100%; height:100%; display:none; ">
+              <h3>Posted your message successfully!</h3>
+            </div>
+            <div id="error_message"
+              style="width:100%; height:100%; display:none; ">
+              <h3>Error</h3>
+                Sorry there was an error sending your form.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.countdown.js"></script>
+
+    <script>
+      $(function() {
+        $('.countdown').countdown({
+          date: "August 21, 2018 00:00:01"
+        });
+      });
+    </script>
+    <script>
+      $(function()
+      {
+          function after_form_submitted(data)
+          {
+              if(data.result == 'success')
+              {
+                  $('form#reused_form').hide();
+                  $('#success_message').show();
+                  $('#error_message').hide();
+              }
+              else
+              {
+                  $('#error_message').append('<ul></ul>');
+
+                  jQuery.each(data.errors,function(key,val)
+                  {
+                      $('#error_message ul').append('<li>'+key+':'+val+'</li>');
+                  });
+                  $('#success_message').hide();
+                  $('#error_message').show();
+
+                  //reverse the response on the button
+                  $('button[type="button"]', $form).each(function()
+                  {
+                      $btn = $(this);
+                      label = $btn.prop('orig_label');
+                      if(label)
+                      {
+                          $btn.prop('type','submit' );
+                          $btn.text(label);
+                          $btn.prop('orig_label','');
+                      }
+                  });
+
+              }//else
+          }
+
+        $('#reused_form').submit(function(e)
+            {
+              e.preventDefault();
+
+              $form = $(this);
+              //show some response on the button
+              $('button[type="submit"]', $form).each(function()
+              {
+                  $btn = $(this);
+                  $btn.prop('type','button' );
+                  $btn.prop('orig_label',$btn.text());
+                  $btn.text('Sending ...');
+              });
+
+
+                          $.ajax({
+                      type: "POST",
+                      url: './php/handler.php',
+                      data: $form.serialize(),
+                      success: after_form_submitted,
+                      dataType: 'json'
+                  });
+
+            });
+      });
+      </script>
+  </body>
+</html>
